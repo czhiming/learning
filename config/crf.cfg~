@@ -1,0 +1,24 @@
+# This configuration file follows the YAML format (www.yaml.org)
+# Please note that the indentation used is 4 spaces.
+
+# Input:
+x_train: data/features/wmt2016_wqe_baseline/task2/train.features
+y_train: data/features/wmt2016_wqe_baseline/task2/train.tags
+x_test: data/features/wmt2016_wqe_baseline/task2/test.features
+y_test: data/features/wmt2016_wqe_baseline/task2/test_words.tags
+separator: "\t"
+
+# Learning algorithm configurations:
+learning:
+    method: CRF
+    crfsuite: /home/czm/software/crfsuite-0.12/bin/crfsuite
+    
+    # Files in which to save the resulting data:
+    temp_input: temp_input.txt
+    model_file: model_file.txt
+    output_file: output_file.txt
+
+    # Learning algorithm parameters:
+    algorithm: arow
+    parameters:
+        variance: 1

@@ -1,0 +1,33 @@
+# This configuration file follows the YAML format (www.yaml.org)
+# Please note that the indentation used is 4 spaces.
+
+x_train: /home/moses/workspace/QE_project/learning/data/features/wmt16/word2vec/wmt16.train.1024.rnnlm.norm.baseline.alignment
+y_train: /home/moses/workspace/QE_project/learning/data/features/wmt16/train.hter
+
+x_test: /home/moses/workspace/QE_project/learning/data/features/wmt16/word2vec/wmt16.test.1024.rnnlm.norm.baseline.alignment
+y_test: /home/moses/workspace/QE_project/learning/data/features/wmt16/test.hter
+
+
+scale: true
+separator: "\t"
+
+#feature_selection:
+#    method: RandomizedLasso
+#    parameters:
+#        cv: 10
+
+# learning
+learning:
+    method: RF
+#    optimize:
+#        n_estimators: [100]
+#        criterion: [mae]
+#        max_features: [auto]
+#        n_jobs: -1
+#        verbose: True
+    parameters:
+        n_jobs: -1
+        
+
+    scorer: [mae,rmse]
+
